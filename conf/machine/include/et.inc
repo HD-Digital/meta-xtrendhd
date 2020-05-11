@@ -27,6 +27,7 @@ DVBMEDIASINK_CONFIG_mipsel = "--with-wma --with-wmv --with-pcm --with-dts --with
 	${@bb.utils.contains('MACHINE_FEATURES', 'h265', '--with-h265 --with-vb6 --with-vb8 --with-spark' , '', d)} \
 	"
 
+EXTRA_OECONF_append_pn-kodi = " --with-gpu=v3d"
 EXTRA_OECMAKE_append_pn-kodi += " -DWITH_V3D=nxpl"
 
 IMAGEVERSION := "${DISTRO_NAME}-${DISTRO_VERSION}-${DATE}"

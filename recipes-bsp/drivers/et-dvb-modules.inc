@@ -5,7 +5,7 @@ LICENSE = "CLOSED"
 
 PV = "${KV}+${SRCDATE}"
 
-SRC_URI = "http://downloads.mutant-digital.net/${MACHINE}/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
+SRC_URI = "http://downloads.mutant-digital.net/xtrend/${MACHINE}/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
 
 S = "${WORKDIR}"
 
@@ -22,7 +22,7 @@ do_install() {
 	install -d ${D}/lib/modules/${KV}/extra
 	install -d ${D}/${sysconfdir}/modules-load.d
 	install -m 0755 ${S}/*.ko ${D}${base_libdir}/modules/${KV}/extra
-	for i in ${MACHINE}_1 ${MACHINE}_2 ${MACHINE}_3 ${MACHINE}_4; do
+	for i in tpm modloader modloader2 dvb; do
 		echo $i >> ${D}/${sysconfdir}/modules-load.d/${MACHINE}.conf
 	done
 }

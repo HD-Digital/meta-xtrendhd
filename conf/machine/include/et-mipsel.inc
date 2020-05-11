@@ -1,5 +1,3 @@
-PREFERRED_VERSION_linux-et = "4.10.6"
-
 IMAGE_FSTYPES += "ubi"
 UBI_VOLNAME = "rootfs"
 
